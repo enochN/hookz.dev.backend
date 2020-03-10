@@ -11,8 +11,9 @@ var mysqlPoolConnection  = mysql.createPool({
   database: process.env.DB_NAME
 });
 
-mysqlPoolConnection.getConnection(function(err) {
+mysqlPoolConnection.getConnection(function(err, connection) {
     if (err) {
+        connection.release();
         console.error("error connecting: " + err.stack);
         return;
     }
