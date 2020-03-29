@@ -9,5 +9,5 @@ module.exports = app => {
 
     app.route("/a/:webhook").all(webhookData.create);
 
-    app.route("/d/:webhook").delete(webhookData.deleteDataByWebhook);
+    app.route("/d/:webhook/data").delete(webhookData.deleteDataByWebhook);
 };
