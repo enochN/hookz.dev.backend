@@ -18,6 +18,15 @@ exports.getDataByWebhook = function(req, res) {
         webhookData
     ) {
         if (err) res.send(err);
-        res.status(201).send(webhookData);
+        res.status(201).send({"message":"request captured successfully"});
     });
+};
+
+exports.deleteDataByWebhook = function (req, res) {
+  webhookDataModel.deleteDataByWebhook(req.params.webhook, function(
+    err, webhook
+  ) {
+    if (err) res.send(err);
+    res.status(201).send({"message":"webhook data deleted successfully"});
+  })
 };

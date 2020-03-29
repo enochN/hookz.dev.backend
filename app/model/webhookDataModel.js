@@ -46,4 +46,19 @@ webhookDataModel.getDataByWebhook = function(webhook, result) {
     );
 };
 
+webhookDataModel.deleteDataByWebhook = function (webhook, result) {
+  db.query(
+    "DELETE FROM hookz_data WHERE webhook = ?",
+    webhook,
+    function (error, response) {
+      if (error) {
+        console.log("error deleting webhook data: ", error);
+        result(null, error);
+      } else {
+        result(null, response)
+      }
+    }
+  );
+};
+
 module.exports = webhookDataModel;

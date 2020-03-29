@@ -9,4 +9,6 @@ module.exports = app => {
     app.route("/webhooks")
         .get(webhook.getAll)
         .post(webhook.create);
+
+    app.route("/webhooks/:webhook").delete(webhook.delete);
 };

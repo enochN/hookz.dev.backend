@@ -30,4 +30,22 @@ webhook.getAll = function(result) {
     });
 };
 
+webhook.delete = function(webhook, result) {
+  db.query("DELETE FROM hookz WHERE name = ?", webhook, function(err) {
+      if (err) {
+          console.log("error deleting webhook: ", err);
+          result(null, error);
+      }
+  });
+
+  db.query("DELETE FROM hookz_data WHERE webhook = ?", webhook, function(err, res) {
+      if (err) {
+          console.log("error deleting webhook data: ", err);
+          result(null, error);
+      } else {
+        result(null, res);
+      }
+  });;
+}
+
 module.exports = webhook;

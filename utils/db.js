@@ -18,7 +18,7 @@ mysqlPoolConnection.getConnection(function(err, connection) {
         return;
     }
 
-    console.log("connected as id " + mysqlPoolConnection.threadId);
+    console.log("mysql pool connected successfully");
 });
 
 module.exports = mysqlPoolConnection;

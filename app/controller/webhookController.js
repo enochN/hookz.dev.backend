@@ -25,3 +25,20 @@ exports.getAll = function(req, res) {
         res.status(201).send(webhooks);
     });
 };
+
+exports.delete = function(req, res) {
+    if (!req.params.webhook) {
+        res.status(400).send({
+            error: true,
+            message: "Please provide a valid webhook"
+        });
+    } else {
+        webhookModel.delete(req.params.webhook, function(err) {
+            if (err) {
+                res.status(400).send(err);
+            } else {
+                res.status(201).send({ "message": "webhook + webhook data deleted successfully" });
+            }
+        });
+    }
+};
