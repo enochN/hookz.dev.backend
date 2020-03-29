@@ -31,6 +31,21 @@ webhookDataModel.create = function(newWebhookData, result) {
     });
 };
 
+webhookDataModel.checkWebhookValidity = function(webhook, result) {
+  db.query(
+      "SELECT COUNT(1) as count FROM hookz WHERE name = ?",
+      webhook,
+      function(err, res) {
+          if (err) {
+              console.log("error checkin if webhook is valid: ", err);
+              result(null, err);
+          } else {
+              result(null, res);
+          }
+      }
+  );
+}
+
 webhookDataModel.getDataByWebhook = function(webhook, result) {
     db.query(
         "SELECT * from hookz_data WHERE webhook = ? ORDER BY created_at DESC",
