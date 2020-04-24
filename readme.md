@@ -4,18 +4,12 @@ The frontend relies on the apis provided by the backend to create and read hookz
 The backend of hookz.dev is built in nodejs, leveraging the expressjs framework. The database system used is mysql.
 
 ## Node Packages Used
-- [express](https://www.npmjs.com/package/express)
-  Fast, unopinionated, minimalist web framework for node.
-- [cors](https://www.npmjs.com/package/cors)
-  CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-- [dotenv](https://www.npmjs.com/package/dotenv)
-  Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
-- [ip](https://www.npmjs.com/package/ip)
-  IP address utility for node.js
-- [mysql](https://www.npmjs.com/package/mysql)
-  A node.js driver for mysql.
-- [uniqid](https://www.npmjs.com/package/uniqid)
-  Unique ID Generator
+- [express](https://www.npmjs.com/package/express) : Fast, unopinionated, minimalist web framework for node.
+- [cors](https://www.npmjs.com/package/cors) : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+- [dotenv](https://www.npmjs.com/package/dotenv) : Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+- [ip](https://www.npmjs.com/package/ip) : IP address utility for node.js
+- [mysql](https://www.npmjs.com/package/mysql) : A node.js driver for mysql.
+- [uniqid](https://www.npmjs.com/package/uniqid) : Unique ID Generator
 
 ## Database Structure
 The database structure for hookz.dev is very simple. There are two tables. The hookz table and the hookz_data table. You can rename the tables to your preference.
